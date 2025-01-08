@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic E-Visiting Card Generator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+    .form-group {
+      margin: 10px 0;
+      width: 80%;
+      max-width: 400px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Enter Your Details</h1>
+  <div class="form-group">
+    <input type="text" id="name" placeholder="Enter your name" class="form-control" />
+  </div>
+  <div class="form-group">
+    <input type="text" id="contact" placeholder="Contact (e.g., +1 234 567 890)" class="form-control" />
+  </div>
+  <div class="form-group">
+    <input type="text" id="address" placeholder="Business Address" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="profile-picture">Upload Profile Picture:</label>
+    <input type="file" id="profile-picture" accept="image/*" />
+  </div>
+  <div class="form-group">
+    <label for="logo-picture">Upload Logo:</label>
+    <input type="file" id="logo-picture" accept="image/*" />
+  </div>
+  <div class="form-group">
+    <label for="layout-style">Choose Layout Style:</label>
+    <select id="layout-style" class="form-control">
+      <option value="style1">Classic</option>
+      <option value="style2">Modern</option>
+      <option value="style3">Elegant</option>
+    </select>
+    
+  </div>
+  <div>
+    <label for="custom-color">Custom Background Color:</label>
+    <input type="color" id="custom-color" value="#ffffff">
+  </div>
+  <div class="form-group">
+    <button id="next-page">Next</button>
+  </div>
+
+  <script>
+    document.getElementById('next-page').addEventListener('click', () => {
+      const name = document.getElementById('name').value || "John Doe";
+      const contact = document.getElementById('contact').value || "+1 234 567 890";
+      const address = document.getElementById('address').value || "123 Business Street, City";
+      const layoutStyle = document.getElementById('layout-style').value;
+
+      // Store data in localStorage
+      localStorage.setItem('name', name);
+      localStorage.setItem('contact', contact);
+      localStorage.setItem('address', address);
+      localStorage.setItem('layoutStyle', layoutStyle);
+
+      const profilePicture = document.getElementById('profile-picture').files[0];
+      const logoPicture = document.getElementById('logo-picture').files[0];
+
+      if (profilePicture && logoPicture) {
+        const readerProfile = new FileReader();
+        const readerLogo = new FileReader();
+
+        readerProfile.onload = (e) => {
+          localStorage.setItem('profilePicture', e.target.result);
+        };
+
+        readerLogo.onload = (e) => {
+          localStorage.setItem('logoPicture', e.target.result);
+          // Redirect to the card generation page
+          window.location.href = 'card.html';
+        };
+
+        readerProfile.readAsDataURL(profilePicture);
+        readerLogo.readAsDataURL(logoPicture);
+      } else {
+        alert("Please upload both a profile picture and a logo.");
+      }
+    });
+  </script>
+</body>
+</html>

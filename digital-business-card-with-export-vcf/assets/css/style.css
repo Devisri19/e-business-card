@@ -1,0 +1,276 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #2a8aea;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand img {
+  height: 40px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.offcanvas-body {
+  background-color: #0a4987;
+}
+
+.nav-item a {
+  padding: 10px;
+  color: #000;
+}
+
+.nav-item a:hover {
+  background-color: #ddd;
+}
+
+/* Header Section */
+#home {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #da8d8d;
+}
+
+#home h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+#home h4 {
+  font-size: 18px;
+  color: #666;
+}
+
+#home button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#home button:hover {
+  background-color: #0056b3;
+}
+
+/* Featured Section */
+#featured {
+  padding: 50px 20px;
+  background-color: #fff;
+}
+
+#featured h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+#featured h4 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+#featured .product {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#featured .product img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+#featured .p-name {
+  font-size: 18px;
+  color: #333;
+}
+
+#featured button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#featured button:hover {
+  background-color: #218838;
+}
+
+/* Carousel Section */
+.carousel-item img {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.carousel-caption button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+
+.carousel-caption button:hover {
+  background-color: #0056b3;
+}
+
+/* Watches Section */
+#Watches {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+
+#Watches h2 {
+  font-size: 28px;
+  color: #333;
+}
+
+#Watches h5 {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+#Watches .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#Watches .product {
+  flex: 1;
+  padding: 20px;
+}
+
+#Watches .product img {
+  width: 100%;
+  height: auto;
+}
+
+#Watches .buy-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#Watches .buy-btn:hover {
+  background-color: #218838;
+}
+
+/* Footer Section */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px;
+}
+
+footer .footer-col {
+  width: 25%;
+  padding: 20px;
+}
+
+footer h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  color: white;
+}
+
+footer .row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer .footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navbar-brand img {
+      height: 30px;
+  }
+
+  #home h1 {
+      font-size: 28px;
+  }
+
+  #home h4 {
+      font-size: 16px;
+  }
+
+  #featured .product img {
+      max-width: 100%;
+  }
+
+  #Watches .row {
+      flex-direction: column;
+  }
+
+  footer .footer-col {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}

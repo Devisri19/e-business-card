@@ -1,0 +1,58 @@
+:root {
+    --theme-color: #3498db;
+  }
+  
+  .card {
+    border: 3px solid var(--theme-color);
+    background: linear-gradient(to bottom, var(--theme-color) 110px, #ffffff 110px);
+  }
+  
+  .buttons button {
+    border: 3px solid var(--theme-color);
+    color: var(--theme-color);
+  }
+  
+  .buttons button:hover {
+    background-color: var(--theme-color);
+    color: #fff;
+  }
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .social-links a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--theme-color);
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #333;
+  }
+  @media (max-width: 768px) {
+    .card {
+      width: 90%;
+      margin: 20px auto;
+    }
+  
+    .buttons {
+      flex-direction: column;
+    }
+  
+    .buttons button {
+      margin-bottom: 10px;
+    }
+  }
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+        
